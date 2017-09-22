@@ -21,7 +21,7 @@ RUN apt-get update && \
     yes | apt-get remove $BUILD_DEPS && yes | apt-get auto-remove && \
      rm -rf /var/lib/apt/lists/*
 
-RUN yes | apt-get install libc-ares-dev
+RUN apt-get update && yes | apt-get install libc-ares-dev && rm -rf /var/lib/apt/lists/*
 
 
 CMD ["ss-server", "-s", "0.0.0.0", "-p", "32384", "-k", "password", "-m", "aes-256-cfb", "--plugin", "obfs-server", "--plugin-opts", "obfs=http"]

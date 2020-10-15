@@ -26,9 +26,7 @@ jobs:
 
         # Docker repository to tag the image with
         repository: ibigbug/shadowsocks-docker
-        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        # Automatically tags the built image with the git reference as per the readme
-        tag_with_ref: true
-        # Always attempt to pull a newer version of the image
-        always_pull: true
-
+        tags: |
+          latest
+          ${GITHUB_SHA::8}
+          

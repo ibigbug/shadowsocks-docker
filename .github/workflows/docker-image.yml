@@ -26,4 +26,4 @@ jobs:
 
         # Docker repository to tag the image with
         repository: ibigbug/shadowsocks-docker
-        tags: latest,${{ GITHUB_SHA }}
+        tags: latest,${{ github.sha }}
